@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "FinanceService";
+
+
+// The greeting service definition.
+service FinanceService {
+    rpc GetCars (IsCarValueForMoney) returns (MultiplStatuses);
+}
+
+message IsCarValueForMoney{
+    int32 id=1;
+}
+
+message Result{
+    int32 id=1;
+    bool isValueForMoney=2;
+}
+
+message MultiplStatuses {
+    repeated Result status = 1;
+}
