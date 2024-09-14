@@ -10,7 +10,7 @@ public class StockDbContext{
     private readonly string _connectionString;
 
     public StockDbContext(IConfiguration configuration){
-        _connectionString=_configuration.GetConnectionString("DefaultConnection");
+        _connectionString=configuration.GetConnectionString("DefaultConnection");
     }
 
     public IDbConnection CreateConnection(){
